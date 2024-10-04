@@ -1,0 +1,151 @@
+{
+  "version": 1,
+  "author": "Carlos Vicente Ariño Latorre",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 19.8, "left": -0.6, "attrs": {} },
+    {
+      "type": "chip-L298N",
+      "id": "L298N_chip1",
+      "top": -132.2,
+      "left": 121.02,
+      "rotate": 270,
+      "attrs": {}
+    },
+    { "type": "wokwi-vcc", "id": "vcc1", "top": -258.44, "left": 67.2, "attrs": {} },
+    { "type": "wokwi-gnd", "id": "gnd1", "top": -163.2, "left": 66.6, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -279.6,
+      "left": 116.6,
+      "rotate": 270,
+      "attrs": { "color": "red", "flip": "1" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": -317.6,
+      "left": 116.6,
+      "rotate": 270,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -225.6,
+      "left": 143.45,
+      "rotate": 90,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": -225.6,
+      "left": 172.25,
+      "rotate": 90,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led3",
+      "top": -279.6,
+      "left": 217.8,
+      "rotate": 90,
+      "attrs": { "color": "orange" }
+    },
+    {
+      "type": "chip-scope",
+      "id": "scope1",
+      "top": -18.18,
+      "left": 331.2,
+      "attrs": {
+        "sampleTimeUs": "100",
+        "sampleTimeMs": "0",
+        "triggerChannel": "0",
+        "triggerMode": "1",
+        "crtColor": "0",
+        "trace0Color": "14",
+        "trace1Color": "12",
+        "trace2Color": "10",
+        "trace3Color": "2"
+      }
+    },
+    {
+      "type": "chip-scope",
+      "id": "scopeout",
+      "top": -238.98,
+      "left": 331.2,
+      "attrs": {
+        "sampleTimeUs": "100",
+        "sampleTimeMs": "0",
+        "triggerChannel": "0",
+        "triggerMode": "1",
+        "crtColor": "0",
+        "trace0Color": "14",
+        "trace1Color": "12",
+        "trace2Color": "10",
+        "trace3Color": "2"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led4",
+      "top": -317.6,
+      "left": 217.8,
+      "rotate": 90,
+      "attrs": { "color": "blue", "flip": "1" }
+    },
+    {
+      "type": "wokwi-slide-potentiometer",
+      "id": "potxx",
+      "top": -100.6,
+      "left": -116.2,
+      "attrs": { "travelLength": "30", "value": "512" }
+    },
+    {
+      "type": "wokwi-slide-potentiometer",
+      "id": "pot2",
+      "top": -273.2,
+      "left": -111.2,
+      "rotate": 270,
+      "attrs": { "travelLength": "30", "value": "612" }
+    }
+  ],
+  "connections": [
+    [ "vcc1:VCC", "L298N_chip1:5V", "red", [ "v48", "h86.4" ] ],
+    [ "gnd1:GND", "L298N_chip1:GND", "black", [ "v-9.6", "h76.8" ] ],
+    [ "L298N_chip1:EN A", "uno:11", "green", [ "v9.6", "h-9.6" ] ],
+    [ "L298N_chip1:IN1", "uno:10", "green", [ "v19.2", "h-9.6" ] ],
+    [ "L298N_chip1:IN2", "uno:9", "green", [ "v28.8", "h-9.6" ] ],
+    [ "L298N_chip1:EN B", "uno:3", "green", [ "v9.6", "h24.8" ] ],
+    [ "L298N_chip1:IN4", "uno:5", "green", [ "v19.2", "h15.4" ] ],
+    [ "uno:6", "L298N_chip1:IN3", "green", [ "v-48", "h-15.5" ] ],
+    [ "led1:C", "r1:1", "red", [ "h0" ] ],
+    [ "led3:C", "r2:1", "red", [ "h0" ] ],
+    [ "L298N_chip1:OUT1", "r1:2", "red", [ "v0" ] ],
+    [ "led2:A", "r1:1", "red", [ "h0" ] ],
+    [ "L298N_chip1:OUT4", "r2:2", "red", [ "h0" ] ],
+    [ "led4:A", "r2:1", "red", [ "h0" ] ],
+    [ "L298N_chip1:OUT3", "led3:A", "black", [ "v0" ] ],
+    [ "L298N_chip1:OUT3", "led4:C", "black", [ "v0" ] ],
+    [ "L298N_chip1:OUT2", "led2:C", "black", [ "v0" ] ],
+    [ "L298N_chip1:OUT2", "led1:A", "black", [ "v-97.81", "h-28.8" ] ],
+    [ "scope1:D0", "uno:11", "green", [ "h-192", "v28.8" ] ],
+    [ "scope1:D1", "uno:10", "green", [ "h0" ] ],
+    [ "scope1:D2", "uno:9", "green", [ "h0" ] ],
+    [ "pot1:SIG", "uno:A0", "green", [ "h-48", "v335.2", "h-57.6" ] ],
+    [ "pot2:SIG", "uno:A1", "green", [ "v19.2", "h-58.4", "v355.2", "h-71.1" ] ],
+    [ "uno:A0", "potxx:SIG", "green", [ "v47.9", "h90.2", "v-354.4" ] ],
+    [ "scope1:D3", "uno:3", "green", [ "h0" ] ],
+    [ "scopeout:D0", "L298N_chip1:OUT1", "green", [ "h-86.4", "v48", "h-38.4" ] ],
+    [ "scopeout:D1", "L298N_chip1:OUT2", "green", [ "h-76.8", "v48", "h-76.8" ] ],
+    [ "scopeout:D2", "L298N_chip1:OUT3", "green", [ "h-67.2", "v48", "h-76.8" ] ],
+    [ "scopeout:D3", "L298N_chip1:OUT4", "green", [ "h-57.6", "v48" ] ],
+    [ "pot2:VCC", "vcc1:VCC", "red", [ "v9.6", "h48", "v-76.8", "h48" ] ],
+    [ "potxx:VCC", "pot2:VCC", "red", [ "h0", "v-48", "h124.8" ] ],
+    [ "potxx:GND", "gnd1:GND", "black", [ "v-115.2", "h-4.4" ] ],
+    [ "pot2:GND", "gnd1:GND", "black", [ "v-14.8", "h67.2", "v163.2", "h28.8" ] ]
+  ],
+  "dependencies": { "chip-scope": "github:Dlloydev/Wokwi-Chip-scope@1.0.7" }
+}
