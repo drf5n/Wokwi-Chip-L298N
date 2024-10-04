@@ -8,7 +8,7 @@ L298N Dual H-bridge motor driver
 To use this chip in your project, include it as a dependency in your `diagram.json` file:
 
 ```json
-"dependencies": { "chip-l298n": "github:drf5n/Wokwi-Chip-L298N@1.0.4" }
+"dependencies": { "chip-l298n": "github:drf5n/Wokwi-Chip-L298N@1.0.5" }
 ```
 
 Then, add the chip to your circuit by adding a `chip-l298n` item to the `parts` section of `diagram.json`:
