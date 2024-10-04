@@ -28,37 +28,27 @@ The actual source code for the chip lives in [src/main.c](https://github.com/drf
 ## Examples
 
 * [Wokwi Uno with L298N driver  using tabbed files](https://wokwi.com/projects/410302035690579969) -- with LED-motors and scopes
+* [Wokwi Uno with L298N driver using github dependency](https://wokwi.com/projects/410788696325754881) -- with LED motors and scopes
 
-### Wokwi files for monitor in a PWM pin:
-```
-void setup() {
-  pinMode(3, OUTPUT);
-  analogWrite(3, 128);
-}
-
-void loop() {
-}
-
-```
-
-```
-{
-  "version": 1,
-  "author": "drf5n",
-  "editor": "wokwi",
-  "parts": [
-    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0, "left": 0, "attrs": {} },
-    { "type": "chip-freq", "id": "freq1", "top": -75.78, "left": 273.6, "attrs": {} }
-  ],
-  "connections": [ [ "freq1:IN", "uno:3", "green", [ "h0" ] ] ],
-  "dependencies": { "chip-freq": "github:drf5n/Wokwi-Chip-FrequencyCounter@1.0.8" }
-}
-```
 
 ## Versions
-* github:drf5n/Wokwi-Chip-L298N@1.0.3 -- Working release? Enabled read-write workflow permissions per https://discord.com/channels/787627282663211009/954892209486966825/1274569798231130163
+* github:drf5n/Wokwi-Chip-L298N@1.0.5 -- Working release.
+* github:drf5n/Wokwi-Chip-L298N@1.0.3 -- nonWorking release? Enabled read-write workflow permissions per https://discord.com/channels/787627282663211009/954892209486966825/1274569798231130163
 * github:drf5n/Wokwi-Chip-L298N@1.0.2 -- non-Working release
 * github:drf5n/Wokwi-Chip-L298N@1.0.1 -- non-Working release
+
+
+# notes on making a Wokwi custom chip work with Github repository dependency
+To get the Wokwi build script working to build the necessary chip.zip file for distribution with a release so Wokwi can pick it up
+
+1) enable the repository settinggs for wokflow permissions to be read-write
+2) make sure the .github/workflows/build.yaml is in the repository
+3) commit
+4) make a vN.n.n tag: `git tag -a "v1.0.5" -m "build.yaml"`
+5) push the tag  to github: `git push origin tag v1.0.5`
+
+Refer to https://discord.com/channels/787627282663211009/954892209486966825/1274569798231130163 for a little discussion 
+
 
 ## License
 
