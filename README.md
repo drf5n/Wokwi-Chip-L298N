@@ -27,6 +27,7 @@ The actual source code for the chip lives in [src/main.c](https://github.com/drf
 
 ## Examples
 
+* [Wokwi Mega with dual steppers and encoders](https://wokwi.com/projects/411109185758524417) -- dual DC motor simulation with scopes
 * [Wokwi Uno with L298N driver  using tabbed files](https://wokwi.com/projects/410302035690579969) -- with LED-motors and scopes
 * [Wokwi Uno with L298N driver using github dependency](https://wokwi.com/projects/410788696325754881) -- with LED motors and scopes
 
