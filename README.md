@@ -31,6 +31,10 @@ The actual source code for the chip lives in [src/main.c](https://github.com/drf
 * [Wokwi Uno with L298N driver  using tabbed files](https://wokwi.com/projects/410302035690579969) -- with LED-motors and scopes
 * [Wokwi Uno with L298N driver using github dependency](https://wokwi.com/projects/410788696325754881) -- with LED motors and scopes
 
+## See also:
+
+* https://github.com/drf5n/Wokwi-Chip-stepper-esc -- for a stepper-ESC custom chip to control a stepper with PWM like a DC motor.
+* https://github.com/drf5n/Wokwi-Chip-TB6612FNG -- for a more efficient dual-h-bridge motor driver custom chip.
 
 ## Versions
 * github:drf5n/Wokwi-Chip-L298N@1.0.5 -- Working release.
